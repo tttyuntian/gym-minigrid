@@ -21,7 +21,7 @@ setup(
     description='Minimalistic gridworld reinforcement learning environments',
     packages=['gym_minigrid', 'gym_minigrid.envs'],
     long_description=long_description,
-    python_requires=">=3.7, <3.11",
+    #python_requires=">=3.7, <3.11",
     long_description_content_type="text/markdown",
     install_requires=[
         'gym>=0.24.0',
