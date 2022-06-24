@@ -1208,11 +1208,12 @@ class MiniGridEnv(gym.Env):
 
         # Observations are dictionaries containing:
         # - an image (partially observable view of the environment)
+        # - an image (fully observable view of the environment)
         # - the agent's direction/orientation (acting as a compass)
         # - a textual mission string (instructions for the agent)
         obs = {
             'image': image,
-            #'obs': image,
+            'grid': self.grid.encode(),
             'direction': self.agent_dir,
             'mission': self.mission
         }
