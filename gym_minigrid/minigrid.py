@@ -1212,7 +1212,7 @@ class MiniGridEnv(gym.Env):
         # - a textual mission string (instructions for the agent)
         obs = {
             'image': image,
-            'obs': image,
+            #'obs': image,
             'direction': self.agent_dir,
             'mission': self.mission
         }
