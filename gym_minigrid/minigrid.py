@@ -1213,7 +1213,8 @@ class MiniGridEnv(gym.Env):
         # - a textual mission string (instructions for the agent)
         obs = {
             'image': image,
-            'grid': self.render(mode="non-human", highlight=False),
+            'grid_rgb': self.render(mode="non-human", highlight=False),
+            'grid_raw': self.grid.encode(),
             'direction': self.agent_dir,
             'mission': self.mission
         }
