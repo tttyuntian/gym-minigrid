@@ -1212,6 +1212,7 @@ class MiniGridEnv(gym.Env):
         # - the agent's direction/orientation (acting as a compass)
         # - a textual mission string (instructions for the agent)
         obs = {
+            'image_rgb': grid.decode(image),
             'image': image,
             'grid_rgb': self.render(mode="non-human", highlight=False),
             'grid_raw': self.grid.encode(),
