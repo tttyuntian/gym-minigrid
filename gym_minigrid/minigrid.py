@@ -1207,14 +1207,17 @@ class MiniGridEnv(gym.Env):
         assert hasattr(self, 'mission'), "environments must define a textual mission string"
 
         # Observations are dictionaries containing:
-        # - an image (partially observable view of the environment)
-        # - an image (fully observable view of the environment)
-        # - the agent's direction/orientation (acting as a compass)
-        # - a textual mission string (instructions for the agent)
+        # image: symbolic partial observation
+        # grid_rgb: RGB full observation
+        # grid_raw: symbolic full observation
+        # agent_coords: coordinates of agent (in full symbolic observations)
+        # direction: agent's direction/orientation
+        # mission: a mission string
         obs = {
             'image': image,
             'grid_rgb': self.render(mode="non-human", highlight=False),
             'grid_raw': self.grid.encode(),
+            'agent_pos': self.agent_pos,
             'direction': self.agent_dir,
             'mission': self.mission
         }
